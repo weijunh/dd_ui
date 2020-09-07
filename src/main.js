@@ -3,12 +3,14 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import MessageTips from './components/Message/messageTips'
+import MessageTips from './components/MessageTips/messageTips.js'
+import Message from './components/Message/message.js'
 
 import Toast from './components/Toast/Toast'
 import Loading from './components/Loading/index'
 
 Vue.use(MessageTips)
+Vue.use(Message)
 Vue.use(Toast)
 Vue.use(Loading)
 

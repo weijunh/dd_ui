@@ -1,6 +1,4 @@
 //用这种方法写的是在Vue实例中的对象方法,不用写在html结构中的,用方法控制的
-
-
 import ToastComponent from './Toast.vue'
 
 const Toast = {}

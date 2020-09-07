@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <UiButton @click="submit" large type="success"></UiButton>
-    <UiButton type="warning">警告</UiButton>
+    <UiButton class="warning" type="warning" @click="gotoabout">警告</UiButton>
     <UiButton type="error" @click="toast">错误</UiButton>
     <loading duration='2s' :isshow='show'></loading>
     <UiButton type="warning" @click="show = !show">显示/隐藏loading</UiButton>
@@ -516,21 +516,36 @@ export default {
   },
   methods: {
     submit () {
-      this.$messageTips(
+      this.$messageTip(
         {
-          type: 'error',
-          message: '11111111'
+          message: '警告!!',
+          type: 'error'
         }
       )
     },
     toast () {
       this.$toast('九月你好')
+    },
+    gotoabout () {
+      this.$router.push({
+        name: 'About',
+        params: {
+          page: '1', code: '8989'
+        }
+      })
     }
   }
 }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scope>
+.home
+  button
+    margin-top 10px
+  .warning
+    transition all 0.3s ease-in-out
+    &:hover
+      box-shadow 5px 5px 5px 5px rgba(0, 0, 0, 0.2)
 .select
   height 5vh
   width 50vw
